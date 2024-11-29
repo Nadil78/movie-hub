@@ -1,0 +1,378 @@
+/* General Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1.6;
+    color: #e0e0e0; /* Light text color for dark background */
+    background-color: #1a1a1a; /* Dark background color */
+}
+
+/* Header and Navigation */
+header {
+    background-color: #111; /* Darker header background */
+    color: #e0e0e0;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+    align-items: center;
+}
+
+.nav-container {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    margin-right: auto;
+}
+
+.logo img {
+    height: 50px; /* Adjust as needed */
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+}
+
+.nav-list li {
+    margin: 0 1rem;
+    position: relative;
+}
+
+.nav-list a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-list a:hover {
+    background-color: #333; /* Subtle background change on hover */
+}
+
+/* Navigation Actions */
+.nav-actions {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #444;
+    margin-right: 1rem;
+    width: 200px;
+    background-color: #2c2c2c; /* Dark background for search bar */
+    color: #e0e0e0; /* Light text color */
+}
+
+.login-btn {
+    background-color: #27ae60; 
+    border: none;
+    color: #e0e0e0;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: #2ecc71; 
+}
+
+/* Submenu Styles */
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #333; /* Dark background for submenu */
+    list-style: none;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Slightly darker shadow */
+    z-index: 1000;
+    min-width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.submenu li {
+    margin: 0.5rem 0;
+}
+
+.submenu a {
+    color: #e0e0e0;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: block;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.submenu a:hover {
+    background-color: #27ae60; 
+}
+
+.menu-item:hover .submenu,
+.menu-item:focus-within .submenu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+.menu-item .submenu:hover {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Slider Styles */
+.slider {
+    position: relative;
+    overflow: hidden;
+    height: 400px;
+}
+
+.slide {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.caption {
+    max-width: 600px;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.caption h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.caption p {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.caption button {
+    background-color: #27ae60; 
+    border: none;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.caption button:hover {
+    background-color: #2ecc71; 
+}
+
+/* Movie Gallery Styles */
+.gallery {
+    padding: 2rem 1rem;
+    background-color: #1a1a1a; /* Dark background for gallery */
+}
+
+.gallery h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    color: #e0e0e0; /* Light text color */
+}
+
+/* Grid Layout */
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.5rem; 
+    justify-content: center;
+}
+
+/* Movie Card Styles */
+.movie-card {
+    background: #2c2c2c; /* Dark background for movie cards */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    cursor: pointer;
+    border: 2px solid #27ae60; 
+}
+
+.movie-card:hover {
+    transform: scale(1.05);
+    border-color: #2ecc71; 
+}
+
+/* Movie Thumbnail and Play Button */
+.movie-thumbnail {
+    position: relative;
+}
+
+.movie-thumbnail img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.movie-card:hover .play-btn {
+    display: flex;
+}
+
+.play-btn:hover {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+/* Movie Info */
+.movie-info {
+    padding: 1rem;
+    text-align: center;
+}
+
+.movie-info h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+    color: #e0e0e0; /* Light text color */
+}
+
+.movie-info p {
+    color: #ccc; /* Slightly lighter text for descriptions */
+}
+
+/* Footer Styles */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+
+.footer {
+    background-color: #222;
+    color: #ddd;
+    padding: 50px 0;
+}
+
+.footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-columns {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 30px;
+}
+
+.footer-column {
+    flex: 1;
+    margin: 0 20px;
+}
+
+.footer-column h3 {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.footer-column p, .footer-column ul {
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    color: #ddd;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-column ul li a:hover {
+    color: #e09;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.social-icons a {
+    color: #ddd;
+    margin-right: 15px;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #e09;
+}
+
+.footer-bottom {
+    border-top: 1px solid #444;
+    padding-top: 20px;
+    text-align: center;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+    color: #aaa;
+    margin: 0;
+}
